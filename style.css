@@ -1,0 +1,129 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.split-container {
+  display: flex;
+  flex-direction: column; /* Initially set as column layout */
+  height: 100vh;
+}
+
+.left,
+.right {
+  flex: 1;
+}
+
+.left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9;
+  overflow: hidden;
+}
+
+.left .image-wrapper {
+  width: 100%; /* Make image wrapper 100% width */
+  height: 100%; /* Make image wrapper 100% height */
+  overflow: hidden;
+}
+
+.left .image-wrapper img {
+  width: 100%; /* Make the image fill the container */
+  height: 100%; /* Make the image fill the container */
+  object-fit: cover; /* Maintain aspect ratio while covering the container */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 800px;
+  text-align: center;
+  padding: 40px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin-bottom: 40px;
+  font-size: 36px;
+  color: #333;
+}
+
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.button {
+  display: inline-block;
+  padding: 15px 30px;
+  margin: 15px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 30px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+
+@media only screen and (min-width: 768px) {
+  .split-container {
+    flex-direction: row; 
+  }
+
+  .left,
+  .right {
+    max-width: 100%; 
+  }
+}
+
+/* Mobile responsiveness */
+@media only screen and (max-width: 767px) {
+  .split-container {
+    flex-direction: column;
+  }
+
+  .left,
+  .right {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .left .image-wrapper {
+    flex-direction: row;
+    overflow: auto;
+  }
+
+  .left .image-wrapper img {
+    max-width: 100%;
+    max-height: none;
+   
+  }
+
+  .container {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .button {
+    margin: 10px;
+  }
+}
